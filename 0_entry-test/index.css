@@ -1,0 +1,132 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Montserrat", sans-serif;
+  --light-red: #fcede8;
+  --dark-red: #af3333;
+  --gray: #777777;
+  --light-gray: #949494;
+}
+
+main {
+  width: 100%;
+  max-width: 900px;
+  margin: 5rem auto;
+}
+
+h1 {
+  font-weight: 800;
+  margin-bottom: 2.5rem;
+}
+
+input {
+  padding: 9px 12px;
+  border-radius: 5px;
+  border: 1px solid var(--gray);
+  width: 100%;
+}
+
+input:focus {
+  border-color: var(--dark-red);
+  outline: none;
+}
+
+#addTechnologyButton {
+  border: 1px solid var(--dark-red);
+  color: var(--dark-red);
+  background-color: var(--light-red);
+  padding: 8px 25px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.25s ease-in-out;
+}
+
+#addTechnologyButton:hover {
+  background-color: var(--dark-red);
+  color: white;
+  cursor: pointer;
+}
+
+#addTechnologyButton:focus {
+  outline: 2px solid var(--dark-red);
+}
+
+#removeTechnologiesButton {
+  background-color: transparent;
+  border: none;
+  color: var(--dark-red);
+  text-decoration: underline;
+  font-weight: 500;
+  border-radius: 5px;
+}
+
+#removeTechnologiesButton:hover {
+  cursor: pointer;
+}
+
+#removeTechnologiesButton:focus {
+  outline: 2px solid var(--dark-red);
+}
+
+#technologies-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem;
+}
+
+.technology-card {
+  border-radius: 15px;
+  box-shadow: 0px 3px 5px var(--light-gray);
+  text-align: center;
+  font-weight: bold;
+  padding: 20px 20px;
+}
+
+.technology-card p {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.technologies-actions-input-container {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.technologies-actions-input-container:last-child {
+  float: right;
+}
+
+.technologies-actions-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 800px) {
+  #technologies-container {
+    grid-template-columns: 1fr;
+  }
+
+  .technologies-actions-input-container {
+    gap: 0.5rem;
+  }
+
+  main {
+    padding: 0 10px;
+  }
+
+  .technologies-actions-container {
+    margin-bottom: 2rem;
+  }
+}
