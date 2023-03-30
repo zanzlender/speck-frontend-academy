@@ -28,29 +28,35 @@ a {
   color: inherit;
 }
 
-/* HEADER */
+/* * * * * * * * * * * *  
+  HEADER
+* * * * * * * * * * * */
 
 .header {
   background-color: var(--color-bg-secondary);
 }
 
 .header__inner {
-  max-width: 1280px;
   height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: 0 auto;
-}
-
-.header__logo-link {
-  float: left;
-  margin-top: calc((80px - 24px) / 2);
+  padding: 0 24px;
 }
 
 .header__logo > path {
   fill: var(--color-primary);
 }
 
+.header__hamburger {
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+
 .header__nav {
-  float: right;
+  display: none;
 }
 
 .header__link {
@@ -63,7 +69,36 @@ a {
   color: var(--color-primary);
 }
 
-/* BUTTON */
+@media screen and (min-width: 768px) {
+  .header__inner {
+    padding: 0 32px;
+    max-width: 930px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header__inner {
+    padding: 0;
+  }
+
+  .header__hamburger {
+    display: none;
+  }
+
+  .header__nav {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .header__inner {
+    max-width: 1280px;
+  }
+}
+
+/* * * * * * * * * * * *  
+  BUTTON
+* * * * * * * * * * * */
 
 .button {
   padding: 12px 20px;
@@ -81,7 +116,9 @@ a {
   background-color: var(--color-primary-dark);
 }
 
-/* HERO */
+/* * * * * * * * * * * *  
+  HERO
+* * * * * * * * * * * */
 
 .hero {
   height: 570px;
@@ -112,10 +149,10 @@ a {
   top: 0;
   width: 100%;
   height: 100%;
+  padding: 0 24px;
 }
 
 .hero__content-inner {
-  max-width: 1280px;
   margin: 0 auto;
 }
 
@@ -129,7 +166,6 @@ a {
   color: var(--color-secondary);
   font-weight: 700;
   font-size: 38px;
-  line-height: 130%;
   letter-spacing: 1px;
   max-width: 450px;
   margin-bottom: 24px;
@@ -138,14 +174,28 @@ a {
 .hero__subtitle {
   color: var(--color-secondary);
   font-size: 16px;
-  line-height: 150%;
   letter-spacing: 0.4px;
   max-width: 550px;
   margin-bottom: 32px;
 }
 
-/* SECTION */
+@media screen and (min-width: 768px) {
+  .hero__content-inner {
+    padding: 0 32px;
+    max-width: 930px;
+  }
+}
 
+@media screen and (min-width: 1024px) {
+  .hero__content-inner {
+    padding: 0;
+    max-width: 1280px;
+  }
+}
+
+/* * * * * * * * * * * *  
+  SECTION
+* * * * * * * * * * * */
 .section {
   background-color: var(--color-bg-primary);
 }
@@ -155,8 +205,7 @@ a {
 }
 
 .section__inner {
-  padding: 90px 0;
-  max-width: 1280px;
+  padding: 64px 24px;
   margin: 0 auto;
 }
 
@@ -165,7 +214,7 @@ a {
   margin: 0 auto;
   text-align: center;
   margin-bottom: 32px;
-  font-size: 36px;
+  font-size: 28px;
 }
 
 .section__subtitle {
@@ -177,27 +226,64 @@ a {
   margin-bottom: 48px;
 }
 
-/* GRID */
+@media screen and (min-width: 768px) {
+  .section__inner {
+    padding: 72px 32px;
+  }
+
+  .section__title {
+    font-size: 32px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .section__inner {
+    padding: 90px 0;
+    max-width: 930px;
+    margin: 0 auto;
+  }
+
+  .section__title {
+    font-size: 36px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .section__inner {
+    max-width: 1280px;
+  }
+}
+
+/* * * * * * * * * * * *  
+  GRID
+* * * * * * * * * * * */
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(1fr);
   gap: 32px;
 }
 
-@media screen and (min-width: 726px) {
+@media screen and (min-width: 580px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media screen and (min-width: 1286px) {
+@media screen and (min-width: 768px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* COURSE  */
+@media screen and (min-width: 1300px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* * * * * * * * * * * *  
+  COURSE
+* * * * * * * * * * * */
 
 .course {
   width: 100%;
@@ -242,4 +328,62 @@ a {
   font-size: 14px;
   font-weight: 700;
   color: var(--color-primary);
+}
+
+/* * * * * * * * * * * *  
+  SINGLE COURSE
+* * * * * * * * * * * */
+
+.single-course {
+}
+
+.single-course__figure {
+  width: 100%;
+  height: 220px;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.single-course__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.single-course__content {
+  font-size: 16px;
+  line-height: 150%;
+}
+
+@media screen and (min-width: 580px) {
+  .single-course__figure {
+    height: 300px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .single-course {
+    display: flex;
+    gap: 49px;
+  }
+
+  .single-course__figure {
+    margin: 0;
+    height: 350px;
+    width: 350px;
+    flex-shrink: 0;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .single-course {
+    gap: 90px;
+  }
+
+  .single-course__figure {
+    width: 450px;
+    height: 450px;
+  }
 }
